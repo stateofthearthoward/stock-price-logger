@@ -56,7 +56,9 @@ def get_data(symbol) -> dict:
     
     return data
 
-def log_data(data={}):
+def log_data(data=None):
+    if data is None:
+        data = {}
     last_time = datetime.fromisoformat(data["last_time"])
     date = last_time.date()
 
